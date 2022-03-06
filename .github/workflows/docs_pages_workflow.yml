@@ -39,7 +39,7 @@ jobs:
     #     cp tools/docs/conf.py main/docs/conf.py
     #     cp tools/docs/buildDocs.sh main/docs/buildDocs.sh
 
-      shell: bash
+    #   shell: bash
  
     - name: Execute script to build our documentation and update pages
       env:
