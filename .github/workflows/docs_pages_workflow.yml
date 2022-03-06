@@ -46,5 +46,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         chmod -R 777 main/docs_ghpage
-        main/docs_ghpage/buildDocs.sh
+        cd main
+        /docs_ghpage/buildDocs.sh
       shell: bash
