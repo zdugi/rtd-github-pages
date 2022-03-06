@@ -18,14 +18,31 @@ jobs:
       run: |
         apt-get update
         apt-get install -y git
-        #git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
-        git clone "https://token:${GITHUB_TOKEN}@github.com/arita37/myutil.git" .
 
-        
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Checkout tools
+      uses: actions/checkout@v3
+      with:
+        repository: arita37/myutil
+        path: main
+
+    - name: Checkout tools repo
+      uses: actions/checkout@v3
+      with:
+        path: tools
+
+    - name: Copy files
+      run: |
+        cp tools/docs/index.rst main/docs/index.rst
+        cp tools/docs/conf.py main/docs/conf.py
+        cp tools/docs/buildDocs.sh main/docs/buildDocs.sh
+
       shell: bash
  
     - name: Execute script to build our documentation and update pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: "docs/buildDocs.sh"
+      run: "main/docs/buildDocs.sh"
       shell: bash
