@@ -18,7 +18,10 @@ jobs:
       run: |
         apt-get update
         apt-get install -y git
-        git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+        #git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+        git clone "https://token:${GITHUB_TOKEN}@github.com/https://github.com/arita37/myutil.git" .
+
+        
       shell: bash
  
     - name: Execute script to build our documentation and update pages
