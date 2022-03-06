@@ -44,5 +44,7 @@ jobs:
     - name: Execute script to build our documentation and update pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: "main/docs_ghpage/buildDocs.sh"
+      run: |
+        chmod -R 777 main/docs_ghpage
+        main/docs_ghpage/buildDocs.sh
       shell: bash
