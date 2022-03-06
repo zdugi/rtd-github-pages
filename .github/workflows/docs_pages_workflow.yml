@@ -19,7 +19,7 @@ jobs:
         apt-get update
         apt-get install -y git
         #git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
-        git clone "https://token:${GITHUB_TOKEN}@github.com/https://github.com/arita37/myutil.git" .
+        git clone "https://token:${GITHUB_TOKEN}@github.com/arita37/myutil.git" .
 
         
       shell: bash
